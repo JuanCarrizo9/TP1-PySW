@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo y nada mas</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/index.css">
+</head>
+<body>
+    
+    <!-- HEADER Y NAVEGACION -->
+    <header>
+        <nav>
+            <div class="logo">Turismo y Nada Más</div>
+            <ul class="nav-link">
+                <li class="dropdown">
+                    <a href="#">Explorar</a>
+                    <div class="mega-menu">
+                        <div class="menu-column">
+                            <h3><a href="./index.html">Inicio</a></h3>
+                        </div>
+                        <div class="menu-column">
+                            <h3><a href="./destinos.html">Destinos</a></h3>
+                        </div>
+                        <div class="menu-column">
+                            <h3><a href="./agencias.html">Agencias</a></h3>
+                        </div>
+                        <div class="menu-column">
+                            <h3><a href="./precios.html">Precios</a></h3>
+                        </div>
+                        <div class="menu-column" id="btn-dark">
+                            <button type="button" id="dark-mode-toggle" class="btn-mega-dark">
+                                ☽ Modo Oscuro
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SCRIPT: DARK MODE -->
+    <script>
+        const btnContainer = document.getElementById('btn-dark');
+        const body = document.body;
+        const btnToggle = document.getElementById('dark-mode-toggle');
+
+        function actualizarBoton(isDark) {
+            if (isDark) {
+                btnToggle.textContent = '☀ Modo Claro';
+            }else {
+                btnToggle.textContent = '☽ Modo Oscuro';
+            }
+        }
+
+        btnContainer.addEventListener('click', () => {
+            const esOscuro = body.classList.toggle('dark-mode')
+            actualizarBoton(esOscuro);
+            localStorage.setItem('theme', esOscuro ? 'dark' : 'light');
+        });
+
+        const temaGuardado = localStorage.getItem('theme');
+        if (temaGuardado === 'dark') {
+            body.classList.add('dark-mode');
+            actualizarBoton(true);
+        }
+    </script>
+
+    <main>
+
+        <!-- HERO: Video de fondo con titulo -->
+        <section class="hero">
+            <video autoplay muted loop playsinline class="hero-video">
+                <source src="../assets/hero-video.mp4" type="video/mp4">
+                Tu navegador no soporta la reproduccion de video.
+            </video>
+
+            <div class="hero-overlay-content">
+                <h1 class="titulo-principal">Turismo y Nada Más</h1>
+                <p class="sub">Descubri experiencias unicas en cada rincon</p>
+                <a href="../pages/destinos.html" class="btn-hero">Ver destinos</a>
+            </div>
+        </section>
+
+        <!-- DESTINOS DESTACADOS: Grid de cards -->
+        <section class="destinos-destacados">
+            <div class="contenedor-titulos">
+                <hr> <h2>Destinos Destacados</h2>
+                <p>Elegi tu proxima parada entre nuestros lugares mas destacados</p>
+            </div>
+
+            <div class="grid-cards">
+
+                <!-- Card: Ninh Bihn -->
+                <article class="card">
+                    <div class="card-header">
+                        <img src="../assets/ninh-bihn.jpg" alt="ninh-bihn">
+                    </div>
+                    <div class="card-body">
+                        <h3>Ninh Bihn</h3>
+                        <p>Navegá entre formaciones rocosas milenarias en el corazón de Vietnam.</p>
+                        <a href="../pages/destinos.html" class="btn-card">Saber mas</a>
+                    </div>
+                </article>
+
+                <!-- Card: Skopje -->
+                <article class="card">
+                    <div class="card-header">
+                        <img src="../assets/skopje.jpg" alt="skopje">
+                    </div>
+                    <div class="card-body">
+                        <h3>Skopje</h3>
+                        <p>Descubrí la ciudad de las mil estatuas y el encanto del viejo bazar macedonio.</p>
+                        <a href="../pages/destinos.html" class="btn-card">Saber mas</a>
+                    </div>
+                </article>
+
+                <!-- Card: Machu Picchu -->
+                <article class="card">
+                    <div class="card-header">
+                        <img src="../assets/macchu-picchu.jfif" alt="machu-picchu">
+                    </div>
+                    <div class="card-body">
+                        <h3>Machu Picchu</h3>
+                        <p>Caminá por senderos milenarios y conectá con la energía única de la ciudadela más imponente de los Andes.</p>
+                        <a href="../pages/destinos.html" class="btn-card">Saber mas</a>
+                    </div>
+                </article>
+
+                <!-- Card: Bangkok -->
+                <article class="card">
+                    <div class="card-header">
+                        <img src="../assets/bangkok.jpg" alt="Bangkok">
+                    </div>
+                    <div class="card-body">
+                        <h3>Bangkok</h3>
+                        <p>Sumergite en la energía de sus mercados flotantes y la majestuosidad de sus templos dorados.</p>
+                        <a href="../pages/destinos.html" class="btn-card">Saber mas</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ESTADISTICAS: Circulos con numeros -->
+        <section class="stats">
+            <div class="contenedor-stats">
+
+                <div class="stat-item">
+                    <div class="stat-circle">
+                        <span class="numero">+500</span>
+                    </div>
+                    <p>Turistas Felices</p>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-circle">
+                        <span class="numero">6</span>
+                    </div>
+                    <p>Agencias Oficiales</p>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-circle">
+                        <span class="numero">+10</span>
+                    </div>
+                    <p>Destinos Exoticos</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TESTIMONIOS: Carrusel CSS-only -->
+        <section id="testimonios" class="snap-section">
+            <h2>Las palabras de nuestros viajeros</h2>
+
+            <div class="carrusel-wrapper">
+                <input type="radio" name="slide" id="t-1" checked>
+                <input type="radio" name="slide" id="t-2">
+                <input type="radio" name="slide" id="t-3">
+
+                <div class="testimonios-container">
+                    <label for="t-1" class="testimonio-card" id="slide1">
+                        <img src="../assets/viajero1.jfif" alt="Foto de viajero">
+                        <blockquote>"Ninh Binh fue lo mejor de mi viaje. La organización de Turismo y Nada Mas fue impecable."</blockquote>
+                        <cite>-Enzo Perez-</cite>
+                    </label>
+
+                    <label for="t-2" class="testimonio-card" id="slide2">
+                        <img src="../assets/viajero2.jpg" alt="Foto de viajero">
+                        <blockquote>"Skopje me sorprendió muchísimo. Un destino histórico que todos deberían conocer."</blockquote>
+                        <cite>-Elena Gonzalez-</cite>
+                    </label>
+
+                    <label for="t-3" class="testimonio-card" id="slide3">
+                        <img src="../assets/viajero3.jfif" alt="Foto de viajero">
+                        <blockquote>"Bangkok es un caos hermoso. Gracias por los consejos para moverme por los mercados."</blockquote>
+                        <cite>-Anibal Moreno-</cite>
+                    </label>
+                </div>
+
+                <div class="dots">
+                    <label for="t-1"></label>
+                    <label for="t-2"></label>
+                    <label for="t-3"></label>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER: Newsletter, redes sociales y mapa -->
+    <footer id="contacto" class="snap-section">
+        <div class="footer-grid">
+
+            <!-- Newsletter -->
+            <div class="footer-form">
+                <h3>Suscribete al Newsletter</h3>
+                <p>Recibi ofertas exclusivas para tus proximos viajes.</p>
+                <form action="">
+                    <input type="email" name="email" placeholder="Ingresa tu email" aria-label="Correo electrónico para suscripción" required>
+                    <button type="submit" class="btn-sub">Suscribirme</button>
+                </form>
+            </div>
+
+            <!-- Redes sociales -->
+            <div class="footer-links">
+                <h3>Seguinos</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook">🌐</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">💬</a>
+                </div>
+                <p>&copy; 2026 Turismo y Nada Mas - Todos los derechos reservados.</p>
+            </div>
+
+            <!-- Mapa -->
+            <div class="footer-map">
+                <h3>Nuestra Oficina</h3>
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.064567232231!2d-64.1887756!3d-31.4166667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a2817a013443%3A0x673c099c279a097d!2zQ8OzcmRvYmEsIEFyZ2VudGluYQ!5e0!3m2!1ses!2sar!4v1711234567890!5m2!1ses!2sar" 
+                        width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Mapa de ubicación de la oficina">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
