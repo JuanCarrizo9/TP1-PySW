@@ -124,6 +124,8 @@
     margin-bottom: 15px;
 }
 
+
+
 /* ESTADISTICAS */
 .stats {
     background-color: var(--secundario);
@@ -212,6 +214,35 @@
     max-width: 800px;
     margin: 50px auto;
     overflow: hidden;
+}
+
+/*ESTILOS PARA DESLIZAR EL CARRUSEL*/
+
+input[name="slide"] {
+    display: none;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.dots label {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(150, 150, 150, 0.5); /* Color gris traslúcido */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+/* Efecto Hover: Para que el usuario sepa que son interactuables */
+.dots label:hover {
+    background-color: var(--acento);
+    transform: scale(1.2);
 }
 
 .testimonios-container {
