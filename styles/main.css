@@ -29,6 +29,30 @@ html {
     scroll-snap-type: y proximity;
 }
 
+/*Scroll Snap*/
+
+.hero,
+.destinos-destacados,
+#testimonios,
+footer {
+    
+    scroll-snap-align: start;
+    
+    
+    min-height: 100vh;
+    
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+footer {
+    scroll-snap-align: end; 
+    min-height: auto; 
+}
+
 body {
     font-family: var(--fuente-cuerpo);
     line-height: 1.6;
