@@ -1,4 +1,20 @@
 /* Contenedor Principal */
+.main-precios {
+    padding-top: 100px; /* Esto empuja todo el contenido hacia abajo del header */
+}
+
+/* 2. Ajustamos las secciones que tienen el "imán" */
+.snap-section {
+    scroll-margin-top: 100px; /* Esto le dice al imán dónde frenar exactamente */
+    padding-top: 20px;       /* Espacio interno para que el h1 no pegue al borde */
+}
+
+/* 3. Aseguramos que el Header no se mueva de su lugar */
+header {position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
 .precios-container {
     padding: 150px 5% 80px; /* Margen superior para el header fixed */
     min-height: 80vh;
@@ -35,8 +51,7 @@
 
 /* EFECTO RESALTADO (Requisito 1) */
 .tabla-precios tr:hover {
-    background-color: var(--gris-claro);
-    transition: var(--transicion-suave);
+   background-color: rgba(42, 157, 143, 0.2);
 }
 
 /* TOOLTIPS (Requisito 2) */
@@ -77,8 +92,8 @@
    la tabla ya cambia sola gracias a tu main.css */
 
 body.dark-mode .tabla-precios th {
-    background-color: #000; /* Negro puro para el modo oscuro */
-    border-bottom: 1px solid var(--primario);
+   color: #ffffff; /* Negro puro para el modo oscuro */
+    background-color: #333333;
 }
 
 body.dark-mode .tooltip {
