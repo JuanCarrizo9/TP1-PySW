@@ -306,6 +306,10 @@ body.dark-mode .stat-item p {
     opacity: 1;
 }
 
+body.dark-mode .stats{
+    background-color: var(--gris-claro);
+}
+
 body.dark-mode .numero {
     color: #ffffff;
 }
