@@ -40,8 +40,14 @@
         </nav>
     </header>
 
+    <!--SPINNER DE CARGA-->
+    <div id="spinner" class="spinner-overlay" aria-label="Cargando contenido">
+        <div class="spinner"></div>
+    </div>
+
     <!-- SCRIPT: DARK MODE -->
     <script>
+        // DARK MODE
         const btnContainer = document.getElementById('btn-dark');
         const body = document.body;
         const btnToggle = document.getElementById('dark-mode-toggle');
@@ -49,13 +55,13 @@
         function actualizarBoton(isDark) {
             if (isDark) {
                 btnToggle.textContent = '☀ Modo Claro';
-            }else {
+            } else {
                 btnToggle.textContent = '☽ Modo Oscuro';
             }
         }
 
         btnContainer.addEventListener('click', () => {
-            const esOscuro = body.classList.toggle('dark-mode')
+            const esOscuro = body.classList.toggle('dark-mode');
             actualizarBoton(esOscuro);
             localStorage.setItem('theme', esOscuro ? 'dark' : 'light');
         });
@@ -65,6 +71,24 @@
             body.classList.add('dark-mode');
             actualizarBoton(true);
         }
+
+        // SPINNER DE CARGA
+        window.addEventListener('load', () => {
+            const spinner = document.getElementById('spinner');
+            spinner.classList.add('oculto');
+        });
+
+        // SCROLL REVEAL
+        const elementos = document.querySelectorAll('.scroll-reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        elementos.forEach(el => observer.observe(el));
     </script>
 
     <main>
