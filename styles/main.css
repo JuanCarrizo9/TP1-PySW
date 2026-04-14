@@ -21,7 +21,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 html {
@@ -37,7 +37,9 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-family: var(--fuente-titulos);
 }
 
@@ -84,7 +86,7 @@ nav {
 }
 
 .dropdown {
-    position: relative; 
+    position: relative;
     list-style: none;
 }
 
@@ -95,7 +97,7 @@ nav {
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--blanco);
-    min-width: 180px; 
+    min-width: 180px;
     box-shadow: var(--sombra);
     border-radius: 8px;
     padding: 10px 0;
@@ -129,8 +131,8 @@ nav {
     border: none;
     padding: 0;
     margin: 0;
-    font-family: inherit; 
-    font-size: 1.1rem;    
+    font-family: inherit;
+    font-size: 1.1rem;
     font-weight: bold;
     color: var(--negro);
     cursor: pointer;
@@ -141,7 +143,7 @@ nav {
 }
 
 .btn-mega-dark:hover {
-    color: var(--blanco); 
+    color: var(--blanco);
     transition: 1s;
 }
 
@@ -222,7 +224,7 @@ footer h3 {
 
 /* UTILIDADES GLOBALES */
 .snap-section {
-    scroll-snap-align: start; 
+    scroll-snap-align: start;
     scroll-snap-stop: always;
 }
 
@@ -271,7 +273,9 @@ footer h3 {
 }
 
 @keyframes girar {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* SCROLL REVEAL */
@@ -321,8 +325,8 @@ body.dark-mode .menu-column #dark-mode-toggle {
     margin: 0 auto;
 }
 
-body.dark-mode section, 
-body.dark-mode header, 
+body.dark-mode section,
+body.dark-mode header,
 body.dark-mode .mega-menu {
     background-color: var(--blanco);
     color: var(--negro);
