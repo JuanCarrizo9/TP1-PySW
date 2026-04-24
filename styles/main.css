@@ -354,4 +354,7 @@ body.dark-mode .footer-form {
     color: var(--negro);
 }
 
-/*TITULO RESPONSIVE*/
+body.dark-mode .destinos-destacados h3,
+body.dark-mode .destinos-destacados p {
+    color: var(--negro);
+}
