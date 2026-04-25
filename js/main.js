@@ -55,3 +55,42 @@
         }, { threshold: 0.15 });
 
         elementos.forEach(el => observer.observe(el));
+
+        // STATS CON JQUERY
+
+       $(document).ready(function() {
+    // 1. Creamos el observador
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // Si la sección es visible en la pantalla
+            if (entry.isIntersecting) {
+                iniciarAnimacion(); 
+                observer.unobserve(entry.target); // Dejamos de vigilar para que solo lo haga una vez
+            }
+        });
+    }, { threshold: 0.5 }); // Se activa cuando se ve el 50% de la sección
+
+    // 2. Le decimos qué vigilar (la sección .stats)
+    const target = document.querySelector('.stats');
+    if (target) {
+        observer.observe(target);
+    }
+
+    // 3. Metemos tu lógica de animación en una función
+    function iniciarAnimacion() {
+        $('.numero').each(function () {
+            let valorFinal = parseInt($(this).text().replace(/[^0-9]/g, ''));
+            let tienePlus = $(this).text().includes('+');
+
+            $(this).prop('Counter', 0).animate({
+                Counter: valorFinal
+            }, {
+                duration: 2000,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text((tienePlus ? "+" : "") + Math.ceil(now));
+                }
+            });
+        });
+    }
+});

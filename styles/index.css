@@ -143,10 +143,17 @@
     margin-bottom: 20px;
     background: rgba(255, 255, 255, 0.05);
     transition: var(--transicion-suave);
+    color: var(--blanco);
 }
 
 .stat-circle:hover {
     background-color: var(--acento);
+   
+    transform: rotate(10deg);
+}
+
+body.dark-mode .stat-circle:hover {
+    background-color: var(--gris-claro);
     color: var(--negro);
     transform: rotate(10deg);
 }
