@@ -436,3 +436,52 @@ body.dark-mode .destinos-destacados p {
 .facebook {
     background-position: -117px 0;
 }
+
+/* IMAGEN PARA EL BOTON */
+
+.btn-sub {
+    display: flex;         /* Alinea icono y texto */
+    align-items: center;   /* Los centra verticalmente */
+    justify-content: center;
+    gap: 10px;
+    background-color: #f1c40f;
+    color: #2c3e50;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 1);
+}
+
+.icon-ovni {
+    display: inline-block; /* ¡Obligatorio para que respete el tamaño! */
+    width: 50px;           /* Ajusta según el tamaño de tu imagen */
+    height: 35px;          /* Ajusta según el tamaño de tu imagen */
+    
+    background-image: url('../assets/btn.png'); /* Verifica que la ruta sea correcta */
+    background-size: cover;   
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    /* Para que el pixel art no se vea borroso */
+    image-rendering: pixelated; 
+
+    margin-left: -2px;
+}
+
+.btn-sub:hover {
+    background-color: #e67e22; /* Cambia a un tono naranja al hover */
+    transform: translateY(-2px); /* Pequeño levantamiento */
+}
+
+/* Efecto ESPECÍFICO sobre el icono cuando se hace hover en el botón */
+.btn-sub:hover .icon-ovni {
+    /* DESPLAZAMOS EL SPRITE: movemos la imagen de fondo hacia la izquierda 
+       para mostrar la segunda versión del OVNI (la de hover).
+       Ajusta el valor negativo al ancho de tu icono (ej: -24px). */
+    background-position: -9px 0; 
+    transition: 1.3s ease;
+}
