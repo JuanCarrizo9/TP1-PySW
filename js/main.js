@@ -76,7 +76,7 @@
         observer.observe(target);
     }
 
-    // 3. Metemos tu lógica de animación en una función
+    
     function iniciarAnimacion() {
         $('.numero').each(function () {
             let valorFinal = parseInt($(this).text().replace(/[^0-9]/g, ''));
@@ -85,7 +85,7 @@
             $(this).prop('Counter', 0).animate({
                 Counter: valorFinal
             }, {
-                duration: 2000,
+                duration: 3500,
                 easing: 'swing',
                 step: function (now) {
                     $(this).text((tienePlus ? "+" : "") + Math.ceil(now));

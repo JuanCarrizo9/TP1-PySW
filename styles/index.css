@@ -195,9 +195,26 @@ body.dark-mode .stat-circle:hover {
 
 /* CARRUSEL DE TESTIMONIOS */
 #testimonios {
-    padding: 100px 5%;
-    text-align: center;
-    background-color: var(--blanco);
+    box-shadow: var(--sombra);
+    
+    /* Un borde sutil para que no sea totalmente transparente */
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    
+    /* Aseguramos que tenga un color de fondo para que la sombra destaque */
+    background-color: var(--blanco); 
+    transition: var(--transicion-suave);
+    
+    /* Un poquito más de aire arriba y abajo */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+body.dark-mode #testimonios {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: #1a1a1a; /* Un gris un pelín distinto al negro del fondo */
 }
 
 .carrusel-wrapper {
@@ -249,9 +266,28 @@ input[name="slide"] {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: transform 0.4s ease, opacity 0.4s ease;
     cursor: pointer;
     background-color: var(--gris-claro);
     border-radius: var(--radio);
+}
+
+@media (max-width: 767px) {
+    .testimonio-card {
+        display: none; /* Oculta todas por defecto en móvil */
+    }
+
+    #t-1:checked ~ .testimonios-container #slide1,
+    #t-2:checked ~ .testimonios-container #slide2,
+    #t-3:checked ~ .testimonios-container #slide3 {
+        display: block; /* Muestra solo la activa */
+        animation: fadeIn 0.5s;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .testimonio-card img {
