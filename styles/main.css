@@ -397,3 +397,42 @@ body.dark-mode .destinos-destacados p {
 #carouselTestimonios .carousel-control-next-icon {
     filter: invert(1); /* Hace las flechas blancas si el fondo es oscuro */
 }
+
+#block {
+    color: var(--negro);
+}
+/* FOOTER */
+
+.icon{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-image: url(../assets/logos.webp);
+    background-repeat: no-repeat;
+    background-size: 180px 65px;
+    border-radius: 100%;
+    background-origin: border-box;
+    transition: transform 0.3s ease;
+    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.icon:hover{
+    transform: scale(1.1);
+    opacity: 1;
+    cursor: pointer;
+}
+
+.twitter {
+    background-position: -2px -0.5px;
+}
+
+/* El segundo es Instagram (centro) */
+.instagram {
+    background-position: -59px 0;   
+}
+
+/* El tercero es Facebook (derecha) */
+.facebook {
+    background-position: -117px 0;
+}
