@@ -40,13 +40,13 @@ html {
 .hero,
 .destinos-destacados,
 footer {
-    
+
     scroll-snap-align: start;
-    
-    
+
+
     min-height: 100vh;
-    
-    
+
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,14 +54,16 @@ footer {
 
 #testimonios {
     scroll-snap-align: start;
-    min-height: auto; /* Que no ocupe toda la pantalla */
-    padding-top: 60px !important; /* Espacio justo para que no choque con lo de arriba */
+    min-height: auto;
+    /* Que no ocupe toda la pantalla */
+    padding-top: 60px !important;
+    /* Espacio justo para que no choque con lo de arriba */
     padding-bottom: 60px !important;
 }
 
 footer {
-    scroll-snap-align: end; 
-    min-height: auto; 
+    scroll-snap-align: end;
+    min-height: auto;
 }
 
 body {
@@ -240,7 +242,8 @@ footer h3 {
 .snap-section {
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    padding-top: 2rem !important; /* Ajustá a tu gusto */
+    padding-top: 2rem !important;
+    /* Ajustá a tu gusto */
     padding-bottom: 2rem !important;
     min-height: auto !important;
 }
@@ -332,7 +335,7 @@ body.dark-mode {
     --secundario: #000000;
     background-color: var(--blanco) !important;
     color: var(--negro) !important;
-    --nav-bg:var(--blanco)
+    --nav-bg: var(--blanco)
 }
 
 body.dark-mode #btn-dark {
@@ -343,7 +346,7 @@ body.dark-mode .menu-column #dark-mode-toggle {
     margin: 0 auto;
 }
 
-body.dark-mode .p-destinos{
+body.dark-mode .p-destinos {
     color: wheat;
 }
 
@@ -380,10 +383,11 @@ body.dark-mode .destinos-destacados p {
     transition: 0.3s;
 }
 
-#t-1:checked ~ .dots label[for="t-1"],
-#t-2:checked ~ .dots label[for="t-2"],
-#t-3:checked ~ .dots label[for="t-3"] {
-    background-color: #0d6efd; /* Color primario de Bootstrap */
+#t-1:checked~.dots label[for="t-1"],
+#t-2:checked~.dots label[for="t-2"],
+#t-3:checked~.dots label[for="t-3"] {
+    background-color: #0d6efd;
+    /* Color primario de Bootstrap */
     transform: scale(1.3);
 }
 
@@ -391,31 +395,37 @@ body.dark-mode .destinos-destacados p {
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background-color: #555; /* Color gris apagado */
-    border: none; /* Quita el borde por defecto de Bootstrap */
-    opacity: 1; /* Forzamos opacidad total */
+    background-color: #555;
+    /* Color gris apagado */
+    border: none;
+    /* Quita el borde por defecto de Bootstrap */
+    opacity: 1;
+    /* Forzamos opacidad total */
     margin: 0 6px;
     transition: all 0.3s ease;
 }
 
 /* Estilo para el punto ACTIVO */
 #carouselTestimonios .carousel-indicators .active.dot-btn {
-    background-color: #0d6efd; /* Color azul de Bootstrap (o tu var primario) */
+    background-color: #0d6efd;
+    /* Color azul de Bootstrap (o tu var primario) */
     transform: scale(1.2);
 }
 
 /* Flechas de control (opcional, para que se vean mejor en fondo oscuro) */
 #carouselTestimonios .carousel-control-prev-icon,
 #carouselTestimonios .carousel-control-next-icon {
-    filter: invert(1); /* Hace las flechas blancas si el fondo es oscuro */
+    filter: invert(1);
+    /* Hace las flechas blancas si el fondo es oscuro */
 }
 
 #block {
     color: var(--negro);
 }
+
 /* FOOTER */
 
-.icon{
+.icon {
     display: inline-block;
     width: 60px;
     height: 60px;
@@ -429,10 +439,16 @@ body.dark-mode .destinos-destacados p {
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.icon:hover{
+.icon:hover {
     transform: scale(1.1);
     opacity: 1;
     cursor: pointer;
+}
+
+.icon:focus,
+.icon:focus-visible {
+    outline: none;
+    box-shadow: none;
 }
 
 .twitter {
@@ -441,7 +457,7 @@ body.dark-mode .destinos-destacados p {
 
 /* El segundo es Instagram (centro) */
 .instagram {
-    background-position: -59px 0;   
+    background-position: -59px 0;
 }
 
 /* El tercero es Facebook (derecha) */
@@ -452,8 +468,10 @@ body.dark-mode .destinos-destacados p {
 /* IMAGEN PARA EL BOTON */
 
 .btn-sub {
-    display: flex;         /* Alinea icono y texto */
-    align-items: center;   /* Los centra verticalmente */
+    display: flex;
+    /* Alinea icono y texto */
+    align-items: center;
+    /* Los centra verticalmente */
     justify-content: center;
     gap: 10px;
     background-color: #f1c40f;
@@ -469,24 +487,30 @@ body.dark-mode .destinos-destacados p {
 }
 
 .icon-ovni {
-    display: inline-block; /* ¡Obligatorio para que respete el tamaño! */
-    width: 50px;           /* Ajusta según el tamaño de tu imagen */
-    height: 35px;          /* Ajusta según el tamaño de tu imagen */
-    
-    background-image: url('../assets/btn.png'); /* Verifica que la ruta sea correcta */
-    background-size: cover;   
+    display: inline-block;
+    /* ¡Obligatorio para que respete el tamaño! */
+    width: 50px;
+    /* Ajusta según el tamaño de tu imagen */
+    height: 35px;
+    /* Ajusta según el tamaño de tu imagen */
+
+    background-image: url('../assets/btn.png');
+    /* Verifica que la ruta sea correcta */
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    
+
     /* Para que el pixel art no se vea borroso */
-    image-rendering: pixelated; 
+    image-rendering: pixelated;
 
     margin-left: -2px;
 }
 
 .btn-sub:hover {
-    background-color: #e67e22; /* Cambia a un tono naranja al hover */
-    transform: translateY(-2px); /* Pequeño levantamiento */
+    background-color: #e67e22;
+    /* Cambia a un tono naranja al hover */
+    transform: translateY(-2px);
+    /* Pequeño levantamiento */
 }
 
 /* Efecto ESPECÍFICO sobre el icono cuando se hace hover en el botón */
@@ -494,6 +518,6 @@ body.dark-mode .destinos-destacados p {
     /* DESPLAZAMOS EL SPRITE: movemos la imagen de fondo hacia la izquierda 
        para mostrar la segunda versión del OVNI (la de hover).
        Ajusta el valor negativo al ancho de tu icono (ej: -24px). */
-    background-position: -9px 0; 
+    background-position: -9px 0;
     transition: 1.3s ease;
 }
