@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencias - Turismo y Nada Más</title>
+    <meta name="description" content="Conocé nuestras agencias asociadas. Perfiles interactivos con calificaciones de viajeros.">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/agencias.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+     <!-- HEADER Y NAVEGACION -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-navbar-custom">
+        <div class="container">
+
+            <a href="./index.html" class="navbar-brand text-white">Turismo y Nada Más</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Activar navegación">
+                <i class="bi bi-list text-white fs-1"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto gap-3 mt-4 mt-lg-0">                           
+                    <li><a class="nav-item text-white" href="../index.html">Inicio</a></li>
+                    <li><a class="nav-item text-white" href="../pages/destinos.html">Destinos</a></li>
+                    <li><a class="nav-item text-white" href="../pages/agencias.html">Agencias</a></li>
+                    <li><a class="nav-item text-white" href="../pages/precios.html">Precios</a></li>
+                    <li><a class="nav-item text-white" href="./contacto.html">Contacto</a></li>
+
+
+                    <li class="nav-item d-flex align-items-center ms-lg-3 mt-3 mt-lg-0 bg-transparent" id="btn-dark">
+                        <button type="button" id="dark-mode-toggle" class="btn btn-outline-dark btn-sm text-white">
+                            <i class="bi bi-moon"></i> Modo Oscuro
+                        </button>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+        </nav>
+    </header>
+
+    <!-- SPINNER DE CARGA -->
+    <div id="spinner" class="spinner-overlay" aria-label="Cargando contenido">
+        <div class="spinner"></div>
+    </div>
+
+    <main class="main-agencias">
+
+        <!-- TITULO DE PAGINA -->
+        <section class="agencias-header snap-section">
+            <h1>Nuestras Agencias</h1>
+            <p>Pasá el cursor sobre cada tarjeta para conocer más detalles de cada agencia.</p>
+        </section>
+
+        <!-- GRID DE TARJETAS FLIP (CSS + jQuery toggle) -->
+        <section class="agencias-grid-section snap-section">
+            <div class="agencias-grid">
+
+                <!-- Agencia 1 -->
+                <div class="flip-card scroll-reveal" aria-label="Tarjeta de agencia Viajes del Sur">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="agencia-icono">✈</div>
+                            <h3>Viajes del Sur</h3>
+                            <p class="agencia-ubicacion">📍 Córdoba, Argentina</p>
+                            <p>Especialistas en destinos patagonicos y aventura al aire libre</p>
+                            <div class="flip-hint">🖱 Hace click para girar</div>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Viajes del Sur</h3>
+                            <ul class="agencia-servicios">
+                                <li>✓ Trekking y excursiones</li>
+                                <li>✓ Paquetes todo incluido</li>
+                                <li>✓ Guias bilingues</li>
+                                <li>✓ Seguro de viaje</li>
+                            </ul>
+                            <div class="rating-jquery" data-rating="5" aria-label="Calificacion: 5 de 5 estrellas">
+                                <span class="estrella-js" data-value="1">★</span>
+                                <span class="estrella-js" data-value="2">★</span>
+                                <span class="estrella-js" data-value="3">★</span>
+                                <span class="estrella-js" data-value="4">★</span>
+                                <span class="estrella-js" data-value="5">★</span>
+                            </div>
+                            <p class="rating-texto"></p>
+                            <p class="agencia-contacto">📞 +54 351 555-1234</p>
+                            <p class="agencia-contacto">✉ info@viajesdelsur.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agencia 2 -->
+                <div class="flip-card scroll-reveal" aria-label="Tarjeta de agencia Mundo Abierto">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="agencia-icono">🌎</div>
+                            <h3>Mundo Abierto</h3>
+                            <p class="agencia-ubicacion">📍 Buenos Aires, Argentina</p>
+                            <p>Conectamos viajeros con experiencias culturales unicas en Asia y Europa</p>
+                            <div class="flip-hint">🖱 Hace click para girar</div>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Mundo Abierto</h3>
+                            <ul class="agencia-servicios">
+                                <li>✓ Tours culturales</li>
+                                <li>✓ Vuelos internacionales</li>
+                                <li>✓ Alojamiento premium</li>
+                                <li>✓ Visa assistance</li>
+                            </ul>
+                            <div class="rating-jquery" data-rating="4" aria-label="Calificacion: 4 de 5 estrellas">
+                                <span class="estrella-js" data-value="1">★</span>
+                                <span class="estrella-js" data-value="2">★</span>
+                                <span class="estrella-js" data-value="3">★</span>
+                                <span class="estrella-js" data-value="4">★</span>
+                                <span class="estrella-js" data-value="5">★</span>
+                            </div>
+                            <p class="rating-texto"></p>
+                            <p class="agencia-contacto">📞 +54 11 5555-6789</p>
+                            <p class="agencia-contacto">✉ hola@mundoabierto.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agencia 3 -->
+                <div class="flip-card scroll-reveal" aria-label="Tarjeta de agencia Ruta Salvaje">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="agencia-icono">🏔</div>
+                            <h3>Ruta Salvaje</h3>
+                            <p class="agencia-ubicacion">📍 Mendoza, Argentina</p>
+                            <p>Aventuras extremas y naturaleza para los viajeros mas intrepidos</p>
+                            <div class="flip-hint">🖱 Hace click para girar</div>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Ruta Salvaje</h3>
+                            <ul class="agencia-servicios">
+                                <li>✓ Rafting y kayak</li>
+                                <li>✓ Escalada en roca</li>
+                                <li>✓ Camping organizado</li>
+                                <li>✓ Equipamiento incluido</li>
+                            </ul>
+                            <div class="rating-jquery" data-rating="3" aria-label="Calificacion: 3 de 5 estrellas">
+                                <span class="estrella-js" data-value="1">★</span>
+                                <span class="estrella-js" data-value="2">★</span>
+                                <span class="estrella-js" data-value="3">★</span>
+                                <span class="estrella-js" data-value="4">★</span>
+                                <span class="estrella-js" data-value="5">★</span>
+                            </div>
+                            <p class="rating-texto"></p>
+                            <p class="agencia-contacto">📞 +54 261 555-4321</p>
+                            <p class="agencia-contacto">✉ contacto@rutasalvaje.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agencia 4 -->
+                <div class="flip-card scroll-reveal" aria-label="Tarjeta de agencia Sol y Arena">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="agencia-icono">🏖</div>
+                            <h3>Sol y Arena</h3>
+                            <p class="agencia-ubicacion">📍 Mar del Plata, Argentina</p>
+                            <p>Los mejores destinos de playa y resorts con relax garantizado.</p>
+                            <div class="flip-hint">🖱 Hace click para girar</div>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Sol y Arena</h3>
+                            <ul class="agencia-servicios">
+                                <li>✓ Resorts all-inclusive</li>
+                                <li>✓ Cruceros exclusivos</li>
+                                <li>✓ Spa y bienestar</li>
+                                <li>✓ Luna de miel</li>
+                            </ul>
+                            <div class="rating-jquery" data-rating="4" aria-label="Calificacion: 4 de 5 estrellas">
+                                <span class="estrella-js" data-value="1">★</span>
+                                <span class="estrella-js" data-value="2">★</span>
+                                <span class="estrella-js" data-value="3">★</span>
+                                <span class="estrella-js" data-value="4">★</span>
+                                <span class="estrella-js" data-value="5">★</span>
+                            </div>
+                            <p class="rating-texto"></p>
+                            <p class="agencia-contacto">📞 +54 223 555-8765</p>
+                            <p class="agencia-contacto">✉ reservas@solyarena.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agencia 5 -->
+                <div class="flip-card scroll-reveal" aria-label="Tarjeta de agencia Sabores Viajeros">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="agencia-icono">🍜</div>
+                            <h3>Sabores Viajeros</h3>
+                            <p class="agencia-ubicacion">📍 Rosario, Argentina</p>
+                            <p>Turismo gastronomico: viaja con el paladar por el mundo entero</p>
+                            <div class="flip-hint">🖱 Hace click para girar</div>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Sabores Viajeros</h3>
+                            <ul class="agencia-servicios">
+                                <li>✓ Food tours guiados</li>
+                                <li>✓ Clases de cocina local</li>
+                                <li>✓ Mercados y ferias</li>
+                                <li>✓ Maridaje de vinos</li>
+                            </ul>
+                            <div class="rating-jquery" data-rating="5" aria-label="Calificacion: 5 de 5 estrellas">
+                                <span class="estrella-js" data-value="1">★</span>
+                                <span class="estrella-js" data-value="2">★</span>
+                                <span class="estrella-js" data-value="3">★</span>
+                                <span class="estrella-js" data-value="4">★</span>
+                                <span class="estrella-js" data-value="5">★</span>
+                            </div>
+                            <p class="rating-texto"></p>
+                            <p class="agencia-contacto">📞 +54 341 555-9012</p>
+                            <p class="agencia-contacto">✉ hola@saboresviajeros.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Agencia 6 -->
+                <div class="flip-card scroll-reveal" aria-label="Tarjeta de agencia Templos y Almas">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <div class="agencia-icono">🕌</div>
+                            <h3>Templos y Almas</h3>
+                            <p class="agencia-ubicacion">📍 Salta, Argentina</p>
+                            <p>Viajes espirituales y religiosos a los lugares mas sagrados del planeta</p>
+                            <div class="flip-hint">🖱 Hace click para girar</div>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Templos y Almas</h3>
+                            <ul class="agencia-servicios">
+                                <li>✓ Peregrinaciones guiadas</li>
+                                <li>✓ Retiros espirituales</li>
+                                <li>✓ Meditacion y yoga</li>
+                                <li>✓ Grupos reducidos</li>
+                            </ul>
+                            <div class="rating-jquery" data-rating="4" aria-label="Calificacion: 4 de 5 estrellas">
+                                <span class="estrella-js" data-value="1">★</span>
+                                <span class="estrella-js" data-value="2">★</span>
+                                <span class="estrella-js" data-value="3">★</span>
+                                <span class="estrella-js" data-value="4">★</span>
+                                <span class="estrella-js" data-value="5">★</span>
+                            </div>
+                            <p class="rating-texto"></p>
+                            <p class="agencia-contacto">📞 +54 387 555-3456</p>
+                            <p class="agencia-contacto">✉ paz@templosyalmas.com</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER: Newsletter, redes sociales y mapa -->
+   <footer id="contacto" class="snap-section bg-dark text-white py-5">
+    <div class="container">
+        <div class="row gy-4 gx-md-5 align-items-start">
+
+            <div class="col-12 col-md-4 footer-form">
+                <h3>Suscribite al Newsletter</h3>
+                <p>Recibí ofertas exclusivas para tus próximos viajes.</p>
+                <form action="" class="d-flex flex-column gap-2">
+                    <input type="email" name="email" class="form-control" placeholder="Ingresa tu email" aria-label="Correo electrónico para suscripción" required>
+
+                    <button type="submit" class="btn btn-primary btn-sub w-90 d-flex align-items-center">
+                        <span class="icon-ovni" aria-hidden="true"></span> Suscribirme
+                    </button>
+                </form>
+
+                <div class="mt-3">
+                <a href="#" 
+                    class="text-warning text-decoration-none small d-flex align-items-center justify-content-center justify-content-md-start fw-bold" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#modalPhishing">
+                    <i class="bi bi-shield-lock-fill me-2"></i> 
+                    Seguridad: Evitá Estafas (Simulación)
+                </a>
+            </div>
+            </div>
+
+
+            <div class="col-12 col-md-4 text-center footer-links">
+                <h3>Seguinos</h3>
+                <div class="social-icons mb-3 d-flex justify-content-center gap-3">
+                    <a href="#" class="icon facebook" aria-label="Facebook"></a>
+                    <a href="#" class="icon instagram" aria-label="Instagram"></a>
+                    <a href="#" class="icon twitter" aria-label="Twitter"></a>
+                </div>
+                <p class="small mt-3">© 2026 Turismo y Nada Mas - Todos los derechos reservados.</p>
+            </div>
+
+            <div class="col-12 col-md-4 footer-map">
+                <h3>Nuestra Oficina</h3>
+                <div class="map-container shadow-sm">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14559.395758257077!2d-65.305!3d-24.183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDEwJzU4LjgiUyA2NcKwMTgnMTguMCJX!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar" 
+                        width="100%" height="200" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Mapa de ubicación de la oficina">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+    <!-- IMPORTACIONES DE BOOTSTRAP, JQUERY Y Js -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
+
+    <!-- MODULO EDUCATIVO PHISHING -->
+    <div class="modal fade" id="modalPhishing" tabindex="-1" aria-labelledby="modalPhishingLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+            
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title fw-bold" id="modalPhishingLabel">
+                    <i class="bi bi-exclamación-triangle-fill"></i> ADVERTENCIA: Módulo de Ciberseguridad
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body p-4">
+                <div class="alert alert-warning border-start border-4 mb-4">
+                    <h6 class="fw-bold">¿Sabías que el Phishing es el fraude más común?</h6>
+                    <p class="mb-0 small">Los atacantes suplantan la identidad de empresas como <strong>Turismo y Nada Más</strong> para robarte contraseñas o datos bancarios.</p>
+                </div>
+
+                <h6 class="text-primary fw-bold mb-3">Ejemplo de un correo fraudulento:</h6>
+                <div class="card bg-light mb-4">
+                    <div class="card-body font-monospace p-3 shadow-sm" style="font-size: 0.85rem; border-left: 4px solid #dc3545;">
+                        <span class="text-muted">De:</span> seguridad-turismo@promo-viajes-arg.net <br>
+                        <span class="text-muted">Asunto:</span> 🚨 ¡URGENTE! Problema con tu reserva #4492 <br><br>
+                        Estimado usuario, <br>
+                        Detectamos un error en el pago de tu último viaje. Para evitar la cancelación y una multa, debés reingresar los datos de tu tarjeta en el siguiente enlace: <br><br>
+                        <div class="text-center">
+                            <a href="#" class="btn btn-sm btn-danger disabled">Validar mi cuenta ahora</a><br>
+                            <small class="text-muted">(Link real: http://bit.ly/pago-seguro-falso-99)</small>
+                        </div>
+                    </div>
+                </div>
+
+                <h6 class="text-success fw-bold mb-3">¿Cómo detectar estas señales?</h6>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start bg-white p-2 border rounded">
+                            <i class="bi bi-envelope-x text-danger me-2 h4"></i>
+                            <div>
+                                <small class="fw-bold d-block">Remitente sospechoso</small>
+                                <span class="extra-small text-muted" style="font-size: 0.75rem;">El dominio no es @turismoynadamas.com.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start bg-white p-2 border rounded">
+                            <i class="bi bi-clock-history text-danger me-2 h4"></i>
+                            <div>
+                                <small class="fw-bold d-block">Sentido de Urgencia</small>
+                                <span class="extra-small text-muted" style="font-size: 0.75rem;">Te amenazan con multas o bloqueos inmediatos.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start bg-white p-2 border rounded">
+                            <i class="bi bi-link-45deg text-danger me-2 h4"></i>
+                            <div>
+                                <small class="fw-bold d-block">Links Acortados</small>
+                                <span class="extra-small text-muted" style="font-size: 0.75rem;">Usan bit.ly o nombres raros para ocultar el destino real.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start bg-white p-2 border rounded">
+                            <i class="bi bi-spellcheck text-danger me-2 h4"></i>
+                            <div>
+                                <small class="fw-bold d-block">Errores Ortográficos</small>
+                                <span class="extra-small text-muted" style="font-size: 0.75rem;">Falta de tildes o redacción automatizada/extraña.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer bg-light justify-content-between">
+                <p class="small text-muted mb-0">* Este es un módulo puramente educativo de la UNJu.</p>
+                <div>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Entendido</button>
+                    <a href="https://www.argentina.gob.ar/justicia/convosenlaweb/situaciones/phishing" target="_blank" class="btn btn-primary">Saber más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="../js/agencias.js"></script>
+
+</body>
+</html>

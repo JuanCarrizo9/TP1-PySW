@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros Destinos - Turismo y Nada Más</title>
+    <meta name="description" content="Explora destinos turísticos únicos. Filtra por categoría y descubre tu próximo viaje.">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/destinos.css">
+</head>
+<body>
+
+    <!-- HEADER Y NAVEGACION -->
+    <header>
+        <nav aria-label="Navegación principal">
+            <div class="logo">Turismo y Nada Más</div>
+            <ul class="nav-link">
+                <li class="dropdown">
+                    <a href="#">Explorar</a>
+                    <div class="mega-menu">
+                        <div class="menu-column">
+                            <h3><a href="../index.html">Inicio</a></h3>
+                        </div>
+                        <div class="menu-column">
+                            <h3><a href="./destinos.html">Destinos</a></h3>
+                        </div>
+                        <div class="menu-column">
+                            <h3><a href="./agencias.html">Agencias</a></h3>
+                        </div>
+                        <div class="menu-column">
+                            <h3><a href="./precios.html">Precios</a></h3>
+                        </div>
+                        <div class="menu-column" id="btn-dark">
+                            <button type="button" id="dark-mode-toggle" class="btn-mega-dark" aria-label="Cambiar entre modo claro y oscuro">
+                                ☽ Modo Oscuro
+                            </button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SPINNER DE CARGA -->
+    <div id="spinner" class="spinner-overlay" aria-label="Cargando contenido">
+        <div class="spinner"></div>
+    </div>
+
+    <main class="main-destinos">
+        <section class="destinos-header snap-section">
+            <h1>Explora el Mundo</h1>
+            <p>Filtra por tus intereses y encuentra tu próximo destino ideal.</p>
+        </section>
+
+        <!-- FILTRADO CSS-ONLY Y GALERIA MASONRY -->
+        <section class="filtro-seccion snap-section">
+            <input type="radio" name="filtro" id="all" checked>
+            <input type="radio" name="filtro" id="cultural">
+            <input type="radio" name="filtro" id="naturaleza">
+            <input type="radio" name="filtro" id="playa">
+            <input type="radio" name="filtro" id="gastronomico">
+            <input type="radio" name="filtro" id="religioso">
+
+            <div class="botones-filtro" role="radiogroup" aria-label="Filtrar destinos por categoría">
+                <label for="all" role="radio">Todos</label>
+                <label for="cultural" role="radio">Cultural</label>
+                <label for="naturaleza" role="radio">Naturaleza</label>
+                <label for="playa" role="radio">Sol y Playa</label>
+                <label for="gastronomico" role="radio">Gastronómico</label>
+                <label for="religioso" role="radio">Religioso</label>
+            </div>
+
+            <!-- GALERIA MASONRY -->
+            <div class="masonry-gallery">
+                <article class="destinos-item cultural tall">
+                    <img src="../assets/skopje.jpg" alt="Skopje">
+                    <div class="overlay">
+                        <h3>Skopje</h3>
+                        <p>Historia Viva</p>
+                    </div>
+                </article>
+
+                <article class="destinos-item naturaleza">
+                    <img src="../assets/ninh-bihn.jpg" alt="Ninh Binh">
+                    <div class="overlay">
+                        <h3>Ninh Binh</h3>
+                        <p>Naturaleza Pura</p>
+                    </div>
+                </article>
+
+                <article class="destinos-item playa">
+                    <img src="../assets/Maldivas.avif" alt="Maldivas">
+                    <div class="overlay">
+                        <h3>Maldivas</h3>
+                        <p>Relax Total</p>
+                    </div>
+                </article>
+
+
+                <article class="destinos-item playa">
+                    <img src="../assets/Santorini.avif" alt="Santorini">
+                    <div class="overlay">
+                        <h3>Santorini</h3>
+                        <p>Islas de Ensueño</p>
+                    </div>
+                </article>
+
+                <article class="destinos-item cultural">
+                    <img src="../assets/Kyoto.avif" alt="Kyoto">
+                    <div class="overlay">
+                        <h3>Kyoto</h3>
+                        <p>Tradición Japonesa</p>
+                    </div>
+                </article>
+
+
+                <article class="destinos-item gastronomico">
+                    <img src="../assets/bangkok.jpg" alt="Bangkok">
+                    <div class="overlay">
+                        <h3>Bangkok</h3>
+                        <p>Sabores del Mundo</p>
+                    </div>
+                </article>
+
+                <article class="destinos-item religioso tall">
+                    <img src="../assets/macchu-picchu.jfif" alt="Machu Picchu">
+                    <div class="overlay">
+                        <h3>Machu Picchu</h3>
+                        <p>Espiritualidad Inca</p>
+                    </div>
+                </article>
+
+                <article class="destinos-item naturaleza">
+                    <img src="../assets/Patagonia.avif" alt="Patagonia">
+                    <div class="overlay">
+                        <h3>Patagonia</h3>
+                        <p>Naturaleza Salvaje</p>
+                    </div>
+                </article>
+
+
+                <article class="destinos-item cultural">
+                    <img src="../assets/Dubrovnik.webp" alt="Dubrovnik">
+                    <div class="overlay">
+                        <h3>Dubrovnik</h3>
+                        <p>Perla del Adriático</p>
+                    </div>
+                </article>
+
+                <article class="destinos-item playa">
+                    <img src="../assets/Bali.avif" alt="Bali">
+                    <div class="overlay">
+                        <h3>Bali</h3>
+                        <p>Paraíso Tropical</p>
+                    </div>
+                </article>
+
+
+                <article class="destinos-item cultural tall">
+                    <img src="../assets/Giza.avif" alt="Giza">
+                    <div class="overlay">
+                        <h3>Giza</h3>
+                        <p>Cuna de Civilizaciones</p>
+                    </div>
+                </article>
+
+                <article class="destinos-item gastronomico">
+                    <img src="../assets/Marrakech.webp" alt="Marrakech">
+                    <div class="overlay">
+                        <h3>Marrakech</h3>
+                        <p>Especias y Color</p>
+                    </div>
+                </article>
+
+                <article class="destinos-item naturaleza">
+                    <img src="../assets/Noruega.avif" alt="Noruega">
+                    <div class="overlay">
+                        <h3>Noruega</h3>
+                        <p>Fiordos Majestuosos</p>
+                    </div>
+                </article>
+
+
+                <article class="destinos-item religioso">
+                    <img src="../assets/Taj Mahal.avif" alt="Taj Mahal">
+                    <div class="overlay">
+                        <h3>Agra</h3>
+                        <p>El Taj Mahal</p>
+                    </div>
+                </article>
+
+                <article class="destinos-item gastronomico">
+                    <img src="../assets/Roma.avif" alt="Roma">
+                    <div class="overlay">
+                        <h3>Roma</h3>
+                        <p>Gastronomía Italiana</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- TABLA DE PRECIOS -->
+        <section class="precios-seccion snap-section">
+            <h2>Tarifas y Disponibilidad</h2>
+            <div class="tabla-wrapper">
+                <table class="tabla-destinos" role="table" aria-label="Tabla de precios de destinos">
+                    <thead>
+                        <tr>
+                            <th scope="col">Destino</th>
+                            <th scope="col">Categoría</th>
+                            <th scope="col">Duración</th>
+                            <th scope="col">Precio Base</th>
+                            <th scope="col">Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Destino">Skopje</td>
+                            <td data-label="Categoría">Cultural</td>
+                            <td data-label="Duración">5 Días</td>
+                            <td data-label="Precio Base">$850</td>
+                            <td data-label="Acción"><button class="btn-card" aria-label="Reservar viaje a Skopje">Reservar</button></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Ninh Binh</td>
+                            <td data-label="Categoría">Naturaleza</td>
+                            <td data-label="Duración">7 Días</td>
+                            <td data-label="Precio Base">$1.200</td>
+                            <td data-label="Acción"><button class="btn-card" aria-label="Reservar viaje a Ninh Binh">Reservar</button></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Maldivas</td>
+                            <td data-label="Categoría">Sol y Playa</td>
+                            <td data-label="Duración">10 Días</td>
+                            <td data-label="Precio Base">$3.500</td>
+                            <td data-label="Acción"><button class="btn-card" aria-label="Reservar viaje a Maldivas">Reservar</button></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Santorini</td>
+                            <td data-label="Categoría">Sol y Playa</td>
+                            <td data-label="Duración">6 Días</td>
+                            <td data-label="Precio Base">$2.100</td>
+                            <td data-label="Acción"><button class="btn-card" aria-label="Reservar viaje a Santorini">Reservar</button></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Kyoto</td>
+                            <td data-label="Categoría">Cultural</td>
+                            <td data-label="Duración">8 Días</td>
+                            <td data-label="Precio Base">$2.800</td>
+                            <td data-label="Acción"><button class="btn-card" aria-label="Reservar viaje a Kyoto">Reservar</button></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Bangkok</td>
+                            <td data-label="Categoría">Gastronómico</td>
+                            <td data-label="Duración">6 Días</td>
+                            <td data-label="Precio Base">$1.050</td>
+                            <td data-label="Acción"><button class="btn-card" aria-label="Reservar viaje a Bangkok">Reservar</button></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Machu Picchu</td>
+                            <td data-label="Categoría">Religioso</td>
+                            <td data-label="Duración">5 Días</td>
+                            <td data-label="Precio Base">$1.400</td>
+                            <td data-label="Acción"><button class="btn-card" aria-label="Reservar viaje a Machu Picchu">Reservar</button></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Patagonia</td>
+                            <td data-label="Categoría">Naturaleza</td>
+                            <td data-label="Duración">9 Días</td>
+                            <td data-label="Precio Base">$1.800</td>
+                            <td data-label="Acción"><button class="btn-card" aria-label="Reservar viaje a Patagonia">Reservar</button></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Dubrovnik</td>
+                            <td data-label="Categoría">Cultural</td>
+                            <td data-label="Duración">5 Días</td>
+                            <td data-label="Precio Base">$1.600</td>
+                            <td data-label="Acción"><button class="btn-card" aria-label="Reservar viaje a Dubrovnik">Reservar</button></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Destino">Bali</td>
+                            <td data-label="Categoría">Sol y Playa</td>
+                            <td data-label="Duración">10 Días</td>
+                            <td data-label="Precio Base">$2.300</td>
+                            <td data-label="Acción"><button class="btn-card" aria-label="Reservar viaje a Bali">Reservar</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- COMENTARIOS DE VIAJEROS -->
+        <section class="comentarios-seccion snap-section">
+            <h2>Comentarios de Viajeros</h2>
+            <div class="comentarios-grid">
+
+                <article class="comentario-card scroll-reveal">
+                    <div class="comentario-header">
+                        <div class="avatar" data-iniciales="ML" aria-hidden="true"></div>
+                        <div class="comentario-info">
+                            <strong>María López</strong>
+                            <span class="comentario-fecha">Marzo 2026</span>
+                        </div>
+                        <div class="comentario-rating" aria-label="5 de 5 estrellas">★★★★★</div>
+                    </div>
+                    <p>Santorini superó todas mis expectativas. Los atardeceres son de otro planeta y la organización del viaje fue impecable desde el primer día.</p>
+                    <div class="comentario-tags">
+                        <span class="tag">Playa</span>
+                        <span class="tag">Romántico</span>
+                    </div>
+                </article>
+
+                <article class="comentario-card scroll-reveal">
+                    <div class="comentario-header">
+                        <div class="avatar" data-iniciales="CR" aria-hidden="true"></div>
+                        <div class="comentario-info">
+                            <strong>Carlos Ramírez</strong>
+                            <span class="comentario-fecha">Febrero 2026</span>
+                        </div>
+                        <div class="comentario-rating" aria-label="4 de 5 estrellas">★★★★☆</div>
+                    </div>
+                    <p>Machu Picchu es un lugar mágico. La caminata es exigente pero cada paso vale la pena. Recomiendo llevar buen calzado y mucha agua.</p>
+                    <div class="comentario-tags">
+                        <span class="tag">Aventura</span>
+                        <span class="tag">Cultural</span>
+                    </div>
+                </article>
+
+                <article class="comentario-card scroll-reveal">
+                    <div class="comentario-header">
+                        <div class="avatar" data-iniciales="AF" aria-hidden="true"></div>
+                        <div class="comentario-info">
+                            <strong>Ana Fernández</strong>
+                            <span class="comentario-fecha">Enero 2026</span>
+                        </div>
+                        <div class="comentario-rating" aria-label="5 de 5 estrellas">★★★★★</div>
+                    </div>
+                    <p>Bangkok me voló la cabeza. La comida callejera es increíble y los templos tienen una paz que no se encuentra en ningún otro lugar del mundo.</p>
+                    <div class="comentario-tags">
+                        <span class="tag">Gastronómico</span>
+                        <span class="tag">Espiritual</span>
+                    </div>
+                </article>
+
+                <article class="comentario-card scroll-reveal">
+                    <div class="comentario-header">
+                        <div class="avatar" data-iniciales="JP" aria-hidden="true"></div>
+                        <div class="comentario-info">
+                            <strong>Juan Pérez</strong>
+                            <span class="comentario-fecha">Diciembre 2025</span>
+                        </div>
+                        <div class="comentario-rating" aria-label="5 de 5 estrellas">★★★★★</div>
+                    </div>
+                    <p>Los fiordos de Noruega son lo más impresionante que vi en mi vida. El silencio, el agua cristalina y las montañas te dejan sin palabras.</p>
+                    <div class="comentario-tags">
+                        <span class="tag">Naturaleza</span>
+                        <span class="tag">Fotografía</span>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contacto" class="snap-section">
+        <div class="footer-grid">
+
+            <div class="footer-form">
+                <h3>Suscribete al Newsletter</h3>
+                <p>Recibi ofertas exclusivas para tus proximos viajes.</p>
+                <form action="">
+                    <input type="email" name="email" placeholder="Ingresa tu email" aria-label="Correo electrónico para suscripción" required>
+                    <button type="submit" class="btn-sub">Suscribirme</button>
+                </form>
+            </div>
+
+            <div class="footer-links">
+                <h3>Seguinos</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook">🌐</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="Twitter">💬</a>
+                </div>
+                <p>&copy; 2026 Turismo y Nada Mas - Todos los derechos reservados.</p>
+            </div>
+
+            <div class="footer-map">
+            <h3>Nuestra Oficina</h3>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3405.064567232231!2d-64.1887756!3d-31.4166667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a2817a013443%3A0x673c099c279a097d!2zQ8OzcmRvYmEsIEFyZ2VudGluYQ!5e0!3m2!1ses!2sar!4v1711234567890!5m2!1ses!2sar" 
+                    width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Mapa de ubicación de la oficina">
+                </iframe>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // DARK MODE
+        const btnContainer = document.getElementById('btn-dark');
+        const body = document.body;
+        const btnToggle = document.getElementById('dark-mode-toggle');
+
+        function actualizarBoton(isDark) {
+            if (isDark) {
+                btnToggle.textContent = '☀ Modo Claro';
+            } else {
+                btnToggle.textContent = '☽ Modo Oscuro';
+            }
+        }
+
+        btnContainer.addEventListener('click', () => {
+            const esOscuro = body.classList.toggle('dark-mode');
+            actualizarBoton(esOscuro);
+            localStorage.setItem('theme', esOscuro ? 'dark' : 'light');
+        });
+
+        const temaGuardado = localStorage.getItem('theme');
+        if (temaGuardado === 'dark') {
+            body.classList.add('dark-mode');
+            actualizarBoton(true);
+        }
+
+        // SPINNER DE CARGA
+        window.addEventListener('load', () => {
+            const spinner = document.getElementById('spinner');
+            spinner.classList.add('oculto');
+        });
+
+        // SCROLL REVEAL
+        const elementos = document.querySelectorAll('.scroll-reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        elementos.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
