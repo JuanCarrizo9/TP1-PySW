@@ -100,66 +100,8 @@ header {
     box-shadow: var(--sombra);
 }
 
-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
 
-/* MENU DESPLEGABLE */
-.nav-link {
-    padding: 0;
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 20px;
-}
-
-.dropdown {
-    position: relative;
-    list-style: none;
-}
-
-.mega-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--blanco);
-    min-width: 180px;
-    box-shadow: var(--sombra);
-    border-radius: 8px;
-    padding: 10px 0;
-    z-index: 2000;
-}
-
-.dropdown:hover .mega-menu {
-    display: block;
-}
-
-.menu-column {
-    padding: 10px 20px;
-    text-align: center;
-    transition: background 0.3s;
-}
-
-.menu-column:hover {
-    background-color: var(--gris-claro);
-}
-
-.menu-column h3 a {
-    color: var(--negro);
-    font-size: 1.1rem;
-    display: block;
-    width: 100%;
-}
 
 /* BOTON MODO OSCURO */
 
@@ -342,17 +284,14 @@ body.dark-mode #btn-dark {
     background-color: var(--negro);
 }
 
-body.dark-mode .menu-column #dark-mode-toggle {
-    margin: 0 auto;
-}
+
 
 body.dark-mode .p-destinos {
     color: wheat;
 }
 
 body.dark-mode section,
-body.dark-mode header,
-body.dark-mode .mega-menu {
+body.dark-mode header {
     background-color: var(--blanco);
     color: var(--negro);
 }
@@ -516,8 +455,23 @@ body.dark-mode .destinos-destacados p {
 /* Efecto ESPECÍFICO sobre el icono cuando se hace hover en el botón */
 .btn-sub:hover .icon-ovni {
     /* DESPLAZAMOS EL SPRITE: movemos la imagen de fondo hacia la izquierda 
-       para mostrar la segunda versión del OVNI (la de hover).
+       para mostrar la segunda version del OVNI (la de hover).
        Ajusta el valor negativo al ancho de tu icono (ej: -24px). */
     background-position: -9px 0;
     transition: 1.3s ease;
+}
+
+/* Cuando btn-sub se combina con btn-primary, Bootstrap maneja el color */
+footer .btn-primary.btn-sub {
+    background-color: #0d6efd !important;
+    border-color: #0d6efd !important;
+    color: #ffffff !important;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+footer .btn-primary.btn-sub:hover {
+    background-color: #0b5ed7 !important;
+    border-color: #0a58ca !important;
+    color: #ffffff !important;
 }

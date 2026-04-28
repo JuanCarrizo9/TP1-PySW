@@ -1,206 +1,45 @@
-/* DESTINOS.CSS: PAGINA DE DESTINOS */
+/* ==========================================================================
+   DESTINOS.CSS - VERSIÓN LIMPIA PARA TP2 (BOOTSTRAP + JQUERY)
+   ========================================================================== */
 
-/* LAYOUT PRINCIPAL */
+/* 1. AJUSTES DE LAYOUT */
 .main-destinos {
-    padding-top: 100px;
+    padding-top: 80px;
+    /* Ajustado para que el navbar no tape el título */
 }
 
-.destinos-header {
-    text-align: center;
-    padding: 40px 5%;
-}
-
-/* SISTEMA DE FILTRADO CSS */
-.filtro-seccion input[type="radio"] {
-    display: none;
-}
-
-.botones-filtro {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 40px;
-}
-
-.botones-filtro label {
-    padding: 10px 20px;
-    background: var(--gris-claro);
-    border-radius: 30px;
-    cursor: pointer;
-    transition: var(--transicion-suave);
-    font-weight: bold;
-}
-
-#all:checked ~ .botones-filtro label[for="all"],
-#cultural:checked ~ .botones-filtro label[for="cultural"],
-#naturaleza:checked ~ .botones-filtro label[for="naturaleza"],
-#playa:checked ~ .botones-filtro label[for="playa"],
-#gastronomico:checked ~ .botones-filtro label[for="gastronomico"],
-#religioso:checked ~ .botones-filtro label[for="religioso"] {
-    background: var(--primario);
-    color: var(--blanco);
-}
-
-/* LOGICA DE FILTRADO */
-#cultural:checked ~ .masonry-gallery .destinos-item:not(.cultural),
-#naturaleza:checked ~ .masonry-gallery .destinos-item:not(.naturaleza),
-#playa:checked ~ .masonry-gallery .destinos-item:not(.playa),
-#gastronomico:checked ~ .masonry-gallery .destinos-item:not(.gastronomico),
-#religioso:checked ~ .masonry-gallery .destinos-item:not(.religioso) {
-    display: none;
-}
-
-/* GALERIA MASONRY */
-.masonry-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 200px;
-    grid-auto-flow: dense;
-    gap: 15px;
-    padding: 20px 5%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.destinos-item {
-    position: relative;
-    border-radius: var(--radio);
-    overflow: hidden;
-    box-shadow: var(--sombra);
-}
-
-.destinos-item.tall {
-    grid-row: span 2;
-}
-
-.destinos-item img {
+/* 2. NIVELACIÓN DE CARDS (Para que todas midan lo mismo) */
+.card-img-top {
     width: 100%;
-    height: 100%;
+    height: 250px;
+    /* Altura fija para que no queden desparejas */
     object-fit: cover;
-    transition: transform 0.5s ease;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    object-position: center;
 }
 
-.destinos-item:hover img {
-    transform: scale(1.15);
-    clip-path: polygon(2% 0%, 100% 0%, 98% 100%, 0% 100%);
+.item-destino {
+    transition: all 0.4s ease-in-out;
 }
 
-/* OVERLAY DE IMAGENES */
-.overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(38, 70, 83, 0.7);
-    color: var(--blanco);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.destinos-item:hover .overlay {
-    opacity: 1;
-}
-
-/* TABLA DE PRECIOS */
-.precios-seccion {
-    padding: 60px 5%;
-}
-
-.tabla-wrapper {
-    overflow-x: auto;
-    margin-top: 30px;
-}
-
-.tabla-destinos {
-    width: 100%;
-    border-collapse: collapse;
-    background: var(--blanco);
-    border-radius: var(--radio);
+/* 3. EFECTO ZOOM (Lógica Natali Suarez) */
+.card-zoom {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     overflow: hidden;
 }
 
-.tabla-destinos th, .tabla-destinos td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid var(--gris-claro);
+.card-zoom:hover {
+    transform: scale(1.03);
+    z-index: 5;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2) !important;
 }
 
-.tabla-destinos th {
-    background: var(--secundario);
-    color: var(--blanco);
+/* 4. TABLA DE PRECIOS (Personalización sobre Bootstrap) */
+.tabla-destinos thead {
+    background-color: var(--secundario);
+    color: white;
 }
 
-/* TABLA RESPONSIVE */
-@media (max-width: 768px) {
-    .tabla-destinos thead {
-        display: none;
-    }
-    
-    .tabla-destinos tr {
-        display: block;
-        margin-bottom: 20px;
-        border: 1px solid var(--gris-claro);
-    }
-    
-    .tabla-destinos td {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        text-align: right;
-    }
-    
-    .tabla-destinos td::before {
-        content: attr(data-label);
-        font-weight: bold;
-        text-transform: uppercase;
-        margin-right: 10px;
-    }
-}
-
-/* COMENTARIOS */
-.comentarios-seccion {
-    padding: 60px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.comentarios-seccion h2 {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.comentarios-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-}
-
-.comentario-card {
-    background: var(--blanco);
-    border: 1px solid var(--gris-claro);
-    border-radius: var(--radio);
-    padding: 25px;
-    box-shadow: var(--sombra);
-    transition: var(--transicion-suave);
-}
-
-.comentario-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.comentario-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 15px;
-}
-
-/* AVATAR CSS CON PSEUDO-ELEMENTO ::after */
+/* 5. AVATAR Y COMENTARIOS (Esto lo mantenemos tal cual, está muy bien) */
 .avatar {
     width: 48px;
     height: 48px;
@@ -216,103 +55,104 @@
     content: attr(data-iniciales);
     color: white;
     font-weight: bold;
-    font-size: 1rem;
-    font-family: var(--fuente-titulos);
 }
 
-.comentario-info {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+.comentario-card {
+    transition: transform 0.3s ease;
 }
 
-.comentario-fecha {
-    font-size: 0.8rem;
-    color: #888;
+.comentario-card:hover {
+    transform: translateY(-5px);
 }
 
-.comentario-rating {
-    color: var(--acento);
-    font-size: 1rem;
-}
-
-.comentario-card p {
-    margin-bottom: 15px;
-    line-height: 1.6;
-    color: #555;
-}
-
-/* TAGS DE CATEGORIAS */
-.comentario-tags {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
-.tag {
-    padding: 4px 12px;
-    background: var(--gris-claro);
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    color: var(--primario);
-    transition: var(--transicion-suave);
-}
-
-.tag:hover {
-    background: var(--primario);
-    color: white;
-}
-
-/* DARK MODE: DESTINOS */
-body.dark-mode .tabla-destinos {
-    background-color: #1e1e1e;
-    border: 1px solid #333;
-}
-
-body.dark-mode .tabla-destinos th {
-    background-color: #2a9d8f;
-    color: #ffffff;
-}
-
-body.dark-mode .tabla-destinos td {
-    color: #e0e0e0;
-    border-bottom: 1px solid #333;
-}
-
-body.dark-mode .tabla-destinos tr:hover {
-    background-color: #2a2a2a;
-}
-
-body.dark-mode .precios-seccion h2 {
-    color: #ffffff;
-}
-
-body.dark-mode .tabla-destinos .btn-card {
-    background-color: #2a9d8f;
-    color: #ffffff;
-}
-
-body.dark-mode .destinos-header h1,
-body.dark-mode .destinos-header p,
-body.dark-mode .comentarios-seccion h2 {
-    color: #ffffff;
-}
-
-body.dark-mode .comentario-card {
+/* 6. MODO OSCURO (Optimizado para las nuevas Cards) */
+body.dark-mode .card {
     background-color: #1e1e1e;
     border-color: #333;
+    color: #ffffff;
 }
 
-body.dark-mode .comentario-card p {
+body.dark-mode .card-body p {
     color: #ccc;
 }
 
-body.dark-mode .comentario-fecha {
-    color: #aaa;
+body.dark-mode .tabla-destinos {
+    background-color: #1e1e1e;
+    color: white;
 }
 
 body.dark-mode .tag {
     background: #333;
     color: var(--primario);
+}
+
+/* 7. REGLA PARA JQUERY: Cuando ocultamos elementos */
+.item-destino.d-none {
+    display: none !important;
+}
+
+/* Esto hace que la fila anclada se resalte con un color suave */
+tr:target td {
+    background-color: #fff3cd !important;
+    /* Un amarillo clarito */
+    border-top: 2px solid #ffeeba;
+    border-bottom: 2px solid #ffeeba;
+}
+
+/* Para que el scroll no quede pegado al techo y se vea bien el título */
+html {
+    scroll-behavior: smooth !important;
+    scroll-padding-top: 120px !important;
+    /* Probá subiendo este número si se sigue tapando */
+}
+
+/* 8. CORRECCIÓN DE BOTONES DE FILTRO EN MODO OSCURO */
+body.dark-mode .filter-btn.btn-outline-primary {
+    color: #0dcaf0 !important;
+    /* Un celeste más brillante para que resalte */
+    border-color: #0dcaf0 !important;
+}
+
+body.dark-mode .filter-btn.btn-outline-primary:hover {
+    background-color: #0dcaf0 !important;
+    color: #1e1e1e !important;
+    /* Fondo oscuro al pasar el mouse */
+}
+
+/* El botón "Todos" (btn-primary) ya se ve bien, pero podemos darle un brillo extra */
+body.dark-mode .filter-btn.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    box-shadow: 0 0 10px rgba(13, 110, 253, 0.5);
+}
+
+body.dark-mode #destinos {
+    background-color: #121212 !important;
+    color: #ffffff;
+}
+
+body.dark-mode #precios {
+    background-color: #121212 !important;
+    color: #ffffff;
+}
+
+body.dark-mode #precios .table {
+    --bs-table-bg: #1e1e1e;
+    --bs-table-color: #ffffff;
+    border-color: #444;
+}
+
+body.dark-mode #precios .badge.text-dark {
+    color: #e0e0e0 !important;
+    border-color: #888 !important;
+    background-color: #333 !important;
+}
+
+body.dark-mode #precios td,
+body.dark-mode #precios td strong {
+    color: #ffffff;
+}
+
+body.dark-mode h2 {
+    color: #ffffff;
 }
