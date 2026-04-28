@@ -1,0 +1,78 @@
+/* BLOG.CSS: Estilos especificos de la pagina del blog */
+
+/* CONTENEDOR PRINCIPAL DEL BLOG */
+main.blog-main {
+    margin-top: 80px;
+}
+
+/* CARDS DEL BLOG */
+.card-blog {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: var(--radio);
+    overflow: hidden;
+}
+
+.card-blog:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-blog .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card-blog:hover .card-img-top {
+    transform: scale(1.03);
+}
+
+/* BOTONES DE FILTRO */
+.filter-btn {
+    border-radius: 20px;
+    padding: 6px 20px;
+    font-weight: 600;
+    transition: var(--transicion-suave);
+}
+
+/* SECCION DE COMENTARIOS */
+.comentarios-section {
+    background-color: var(--gris-claro);
+    border-radius: var(--radio);
+}
+
+.comentarios-section img {
+    object-fit: cover;
+}
+
+.comentarios-section h6 {
+    color: var(--secundario);
+}
+
+/* DARK MODE - BLOG */
+body.dark-mode .card-blog {
+    background-color: #1e1e1e !important;
+    border-color: #444 !important;
+    color: white !important;
+}
+
+body.dark-mode .card-blog .card-title {
+    color: #0dcaf0 !important;
+}
+
+body.dark-mode .card-blog .card-text {
+    color: #ccc !important;
+}
+
+body.dark-mode .comentarios-section {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode .comentarios-section h6 {
+    color: #0dcaf0;
+}
+
+body.dark-mode .comentarios-section p {
+    color: #ccc;
+}
