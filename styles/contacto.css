@@ -277,3 +277,181 @@ body.dark-mode .contacto-card .form-select:focus {
 body.dark-mode .contacto-card label { color: #ccc; }
 body.dark-mode .form-overlay { background: rgba(30, 30, 30, 0.85); }
 body.dark-mode .form-overlay p { color: #fff; }
+
+/* RESPONSIVE: TABLETS Y MOVILES */
+@media (max-width: 768px) {
+    .contacto-header h1 {
+        font-size: 2rem;
+    }
+
+    .contacto-header p {
+        font-size: 1rem;
+    }
+
+    .contacto-card {
+        padding: 30px 20px;
+    }
+
+    .contacto-card h2 {
+        font-size: 1.4rem;
+    }
+
+    .btn-enviar {
+        width: 100%;
+        padding: 12px 20px;
+    }
+
+    .info-item {
+        padding: 20px;
+    }
+
+    .horarios-card {
+        padding: 20px;
+    }
+}
+
+/* RESPONSIVE: MOVILES PEQUENOS */
+@media (max-width: 480px) {
+    .main-contacto {
+        padding-top: 80px;
+    }
+
+    .contacto-header {
+        padding: 30px 4% 15px;
+    }
+
+    .contacto-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .contacto-header p {
+        font-size: 0.9rem;
+    }
+
+    .contacto-section {
+        padding: 15px 0 40px;
+    }
+
+    .contacto-card {
+        padding: 24px 16px;
+        border-radius: 10px;
+    }
+
+    .contacto-card h2 {
+        font-size: 1.25rem;
+    }
+
+    .contacto-card .subtitulo {
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+    }
+
+    .contacto-card .form-control,
+    .contacto-card .form-select {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+    }
+
+    .btn-enviar {
+        font-size: 0.95rem;
+        padding: 12px 16px;
+    }
+
+    .info-item {
+        padding: 18px 14px;
+        gap: 12px;
+    }
+
+    .info-item i {
+        font-size: 1.5rem;
+    }
+
+    .info-item h4 {
+        font-size: 0.9rem;
+    }
+
+    .info-item p {
+        font-size: 0.82rem;
+        word-break: break-word;
+    }
+
+    .horarios-card {
+        padding: 18px 14px;
+    }
+
+    .horarios-card h4 {
+        font-size: 0.9rem;
+    }
+
+    .horario-item {
+        font-size: 0.82rem;
+        padding: 6px 0;
+    }
+
+    .char-counter {
+        font-size: 0.72rem;
+    }
+
+    .error-msg {
+        font-size: 0.75rem;
+    }
+}
+
+/* RESPONSIVE: PANTALLAS MUY PEQUENAS (Galaxy Fold, iPhone SE) */
+@media (max-width: 360px) {
+    .contacto-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .contacto-header p {
+        font-size: 0.82rem;
+    }
+
+    .contacto-card {
+        padding: 20px 12px;
+    }
+
+    .contacto-card h2 {
+        font-size: 1.1rem;
+    }
+
+    .contacto-card .subtitulo {
+        font-size: 0.8rem;
+    }
+
+    .contacto-card .form-control,
+    .contacto-card .form-select {
+        padding: 9px 12px;
+        font-size: 0.85rem;
+    }
+
+    .btn-enviar {
+        font-size: 0.9rem;
+        padding: 11px 14px;
+    }
+
+    .info-item {
+        padding: 15px 12px;
+        gap: 10px;
+    }
+
+    .info-item i {
+        font-size: 1.3rem;
+    }
+
+    .info-item h4 {
+        font-size: 0.85rem;
+    }
+
+    .info-item p {
+        font-size: 0.78rem;
+    }
+
+    .horarios-card {
+        padding: 15px 12px;
+    }
+
+    .horario-item {
+        font-size: 0.78rem;
+    }
+}
