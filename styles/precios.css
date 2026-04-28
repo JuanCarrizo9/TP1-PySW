@@ -1,111 +1,42 @@
-/* PRECIOS.CSS: PAGINA DE PRECIOS */
-
-/* LAYOUT PRINCIPAL */
-.main-precios {
-    padding-top: 100px;
+/* Contenedor principal */
+main.container {
+    padding-top: 100px !important;
 }
 
-.snap-section {
-    scroll-margin-top: 100px;
-    padding-top: 20px;
+/* Estilos base de la tabla */
+.tabla-section {
+    transition: all 0.3s ease;
 }
 
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+#tabla-precios tbody tr {
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-.precios-header {
-    padding: 40px 5%;
-    text-align: center;
+/* Hover Dinámico solicitado */
+#tabla-precios tbody tr:hover {
+    background-color: rgba(13, 110, 253, 0.1) !important;
+    transform: scale(1.01);
 }
 
-.precios-header .contenedor-titulos h1 {
-    margin-top: 25px;
-}
-
-.precios-container {
-    padding: 150px 5% 80px;
-    min-height: 80vh;
-}
-
-/* TABLA DE PRECIOS */
-.tabla-wrapper {
-    overflow-x: auto;
-    background-color: var(--blanco);
-    border-radius: var(--radio);
-    box-shadow: var(--sombra);
-    margin-top: 20px;
-}
-
-.tabla-precios {
-    width: 100%;
-    border-collapse: collapse;
-    color: var(--negro);
-}
-
-.tabla-precios th,
-.tabla-precios td {
-    padding: 20px;
-    border-bottom: 1px solid var(--gris-claro);
-    text-align: center;
-}
-
-.tabla-precios th {
-    background-color: var(--secundario);
-    color: var(--blanco);
-    font-family: var(--fuente-titulos);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* EFECTO RESALTADO */
-.tabla-precios tr:hover {
-    background-color: rgba(42, 157, 143, 0.2);
-}
-
-/* TOOLTIPS */
-.tooltip {
-    position: relative;
-    color: var(--primario);
+.precio-tag {
     font-weight: bold;
-    cursor: help;
-    border-bottom: 2px dotted var(--primario);
+    color: #0d6efd;
+    transition: all 0.3s ease;
 }
 
-.tooltip::after {
-    content: attr(data-text);
-    position: absolute;
-    bottom: 130%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--negro);
-    color: var(--blanco);
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 0.8rem;
-    width: 160px;
-    opacity: 0;
-    visibility: hidden;
-    transition: var(--transicion-suave);
-    box-shadow: var(--sombra);
-    z-index: 10;
+#tabla-precios tbody tr:hover .precio-tag {
+    color: #0a58ca;
+    font-size: 1.1rem;
 }
 
-.tooltip:hover::after {
-    opacity: 1;
-    visibility: visible;
+/* Modo Oscuro - Tabla */
+body.dark-mode .table {
+    --bs-table-bg: #1e1e1e;
+    --bs-table-color: #ffffff;
+    border-color: #444;
 }
 
-/* DARK MODE: PRECIOS */
-body.dark-mode .tabla-precios th {
-    color: #ffffff;
-    background-color: #333333;
-}
-
-body.dark-mode .tooltip {
-    color: var(--acento);
-    border-bottom-color: var(--acento);
+body.dark-mode .precio-tag {
+    color: #0dcaf0;
 }
