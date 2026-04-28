@@ -101,6 +101,22 @@ header {
 }
 
 
+/*SPRITE HEADER*/
+.sprite-icon{
+    display: inline-block;
+    background-image: url(../assets/viajes-removebg-preview.png);
+    background-repeat: no-repeat;
+    width: 52px;
+    height: 52px;
+    
+
+}
+
+.brand-icon{
+    background-position: 2px -1px;
+    background-size: 48px 54px;
+}
+
 
 
 /* BOTON MODO OSCURO */

@@ -1,7 +1,28 @@
 /* Contenedor principal */
+:root {
+    --fuente-titulos: 'Montserrat', sans-serif;
+    --fuente-cuerpo: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Obliga al body a medir toda la pantalla */
+    margin: 0;
+}
+
+main {
+    flex: 1; /* Esto hace que el main 'crezca' y empuje al footer hacia el fondo */
+}
+header{
+    font-family: var(--fuente-titulos);
+}
+
 main.container {
     padding-top: 100px !important;
 }
+
 
 /* Estilos base de la tabla */
 .tabla-section {
