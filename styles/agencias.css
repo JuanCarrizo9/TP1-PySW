@@ -99,8 +99,15 @@
 }
 
 @keyframes flotar {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
 }
 
 .agencia-ubicacion {
@@ -119,8 +126,15 @@
 }
 
 @keyframes pulsar {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 1; }
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
 }
 
 /* REVERSO */
@@ -177,15 +191,38 @@
     animation: brillar 1.5s ease-in-out infinite;
 }
 
-.rating-jquery .estrella-js.activa:nth-child(1) { animation-delay: 0s; }
-.rating-jquery .estrella-js.activa:nth-child(2) { animation-delay: 0.1s; }
-.rating-jquery .estrella-js.activa:nth-child(3) { animation-delay: 0.2s; }
-.rating-jquery .estrella-js.activa:nth-child(4) { animation-delay: 0.3s; }
-.rating-jquery .estrella-js.activa:nth-child(5) { animation-delay: 0.4s; }
+.rating-jquery .estrella-js.activa:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.rating-jquery .estrella-js.activa:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.rating-jquery .estrella-js.activa:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.rating-jquery .estrella-js.activa:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.rating-jquery .estrella-js.activa:nth-child(5) {
+    animation-delay: 0.4s;
+}
 
 @keyframes brillar {
-    0%, 100% { transform: scale(1); opacity: 1; }
-    50% { transform: scale(1.2); opacity: 0.8; }
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
 }
 
 .rating-jquery .estrella-js:hover {
@@ -226,4 +263,173 @@ body.dark-mode .agencia-ubicacion {
 body.dark-mode .flip-card-back .agencia-servicios li,
 body.dark-mode .flip-card-back .agencia-contacto {
     color: #ffffff;
+}
+
+/* RESPONSIVE: TABLETS Y MOVILES */
+@media (max-width: 768px) {
+    .agencias-header h1 {
+        font-size: 2rem;
+    }
+
+    .agencias-header p {
+        font-size: 1rem;
+    }
+
+    .agencias-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 4%;
+    }
+
+    .flip-card {
+        height: 340px;
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+        padding: 25px;
+    }
+
+    .agencia-icono {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    .flip-card-front h3 {
+        font-size: 1.2rem;
+    }
+
+    .flip-card-front p {
+        font-size: 0.9rem;
+    }
+}
+
+/* RESPONSIVE: MOVILES PEQUENOS */
+@media (max-width: 480px) {
+    .main-agencias {
+        padding-top: 80px;
+    }
+
+    .agencias-header {
+        padding: 30px 4% 15px;
+    }
+
+    .agencias-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .agencias-header p {
+        font-size: 0.9rem;
+    }
+
+    .agencias-grid-section {
+        padding: 15px 3% 40px;
+    }
+
+    .agencias-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .flip-card {
+        height: 310px;
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+        padding: 20px 16px;
+    }
+
+    .agencia-icono {
+        font-size: 2rem;
+        margin-bottom: 8px;
+    }
+
+    .flip-card-front h3 {
+        font-size: 1.1rem;
+        margin-bottom: 3px;
+    }
+
+    .flip-card-front p {
+        font-size: 0.85rem;
+    }
+
+    .agencia-ubicacion {
+        font-size: 0.78rem !important;
+        margin-bottom: 6px;
+    }
+
+    .flip-hint {
+        font-size: 0.75rem;
+        margin-top: 10px;
+    }
+
+    .flip-card-back h3 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+
+    .agencia-servicios li {
+        font-size: 0.82rem;
+        padding: 3px 0;
+    }
+
+    .agencia-contacto {
+        font-size: 0.78rem;
+    }
+
+    .rating-jquery .estrella-js {
+        font-size: 1.3rem;
+    }
+
+    .rating-texto {
+        font-size: 0.75rem;
+    }
+}
+
+/* RESPONSIVE: PANTALLAS MUY PEQUENAS */
+@media (max-width: 360px) {
+    .agencias-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .agencias-header p {
+        font-size: 0.82rem;
+    }
+
+    .flip-card {
+        height: 290px;
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+        padding: 16px 12px;
+    }
+
+    .agencia-icono {
+        font-size: 1.8rem;
+        margin-bottom: 6px;
+    }
+
+    .flip-card-front h3 {
+        font-size: 1rem;
+    }
+
+    .flip-card-front p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    .flip-card-back h3 {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+
+    .agencia-servicios li {
+        font-size: 0.78rem;
+    }
+
+    .rating-jquery .estrella-js {
+        font-size: 1.1rem;
+    }
 }
